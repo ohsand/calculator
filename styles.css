@@ -1,0 +1,231 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+* {
+    font-family: 'League Spartan', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root,
+:root.one {
+    --bg-color: hsl(222, 26%, 31%);
+    --keypad-bg-color: hsl(223, 31%, 20%);
+    --screen-bg-color: hsl(224, 36%, 15%);
+
+    --del-key-color: hsl(225, 21%, 49%);
+    --del-key-shadow: hsl(224, 28%, 35%);
+
+    --equal-key-color: hsl(6, 63%, 50%);
+    --equal-key-shadow: hsl(6, 70%, 34%);
+
+    --regular-key-bg: hsl(30, 25%, 89%);
+    --regular-key-shadow: hsl(28, 16%, 65%);
+
+    --text-color: hsl(221, 14%, 31%);
+    --white-color: hsl(0, 0%, 100%);
+
+    --equal-text-color: hsl(0, 0%, 100%);
+  
+}
+
+:root.two {
+    --bg-color: hsl(0, 0%, 90%);
+    --keypad-bg-color: hsl(0, 6%, 82%);
+    --screen-bg-color: hsl(0, 0%, 93%);
+
+    --del-key-color: hsl(184, 40%, 56%);
+    --del-key-shadow: hsl(185, 60%, 25%);
+
+    --equal-key-color: hsl(25, 100%, 61%);
+    --equal-key-shadow: hsl(25, 100%, 26%);
+
+    --regular-key-bg: hsl(48, 9%, 89%);
+    --regular-key-shadow: hsl(36, 10%, 61%);
+
+    --text-color: hsl(68, 7%, 22%);
+    --white-color: hsl(68, 8%, 20%);
+
+    --equal-text-color: hsl(0, 0%, 100%);
+  
+}
+
+:root.three {
+    --bg-color: hsl(268, 75%, 9%);
+    --keypad-bg-color: hsl(269, 74%, 12%);
+    --screen-bg-color: hsl(269, 74%, 12%);
+
+    --del-key-color: hsl(280, 56%, 44%);
+    --del-key-shadow: hsl(285, 92%, 52%);
+
+    --equal-key-color: hsl(177, 100%, 79%);
+    --equal-key-shadow: hsl(176, 93%, 71%);
+
+    --regular-key-bg: hsl(269, 48%, 20%);
+    --regular-key-shadow: hsl(290, 74%, 36%);
+
+    --text-color: hsl(51, 97%, 60%);
+    --white-color: hsl(51, 97%, 60%);
+
+    --equal-text-color: hsl(189, 50%, 11%);
+  
+}
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 500px;
+    margin: 0px 20px;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    color: var(--white-color);
+    align-items: center;
+}
+
+#theme {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: .8em;
+    margin-right: 30px;
+}
+
+#switcher {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+input {
+    height: 15px;
+    width: 15px;
+    appearance: none;
+    background-color: var(--equal-key-color);
+    border-radius: 50%;
+    opacity: 0;
+    padding: 0;
+    margin: 5px;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+.tri-state-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--keypad-bg-color);
+    border-radius: 50px;
+    width: auto;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    height: 25px;
+}
+
+#one {
+    opacity: 1;
+}
+
+#result {
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--screen-bg-color);
+    height: 120px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px;
+    font-size: 3em;
+    color: var(--white-color);
+}
+
+#keypad {
+    /* padding: 30px; */
+    padding: 3%;
+    background-color: var(--keypad-bg-color);
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+    /* gap: 15px; */
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    /* gap: 20px; */
+    gap: 2%;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+
+.key {
+    width: 25%;
+    height: 60px;
+    background-color: var(--regular-key-bg);
+    border-radius: 10px;
+    color: var(--text-color);
+}
+
+.longkey {
+    width: 50%;
+    height: 60px;
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.key, .longkey {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    box-shadow: 0px 4px 0px 0px var(--regular-key-shadow);
+}
+
+#delKey, #equalKey {
+    background-color: var(--del-key-color);
+    color: var(--white-color);
+    font-size: 25px;
+    box-shadow: 0px 4px 0px 0px var(--del-key-shadow);
+}
+
+#equalKey {
+    background-color: var(--equal-key-color);
+    color: var(--equal-text-color);
+    font-size: 25px;
+    box-shadow: 0px 4px 0px 0px var(--equal-key-shadow);
+}
+
+.key:hover, .longkey:hover {
+    cursor: pointer;
+}
+
+.key:active, .longkey:active {
+    box-shadow: none !important;
+    transform: translateY(4px);
+}
